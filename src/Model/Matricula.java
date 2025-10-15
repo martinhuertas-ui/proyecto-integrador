@@ -1,3 +1,7 @@
+package Model;
+
+import Interfaces.IMostrable;
+
 import java.time.LocalDate;
 
 public class Matricula implements IMostrable {
@@ -49,7 +53,7 @@ public class Matricula implements IMostrable {
 
     @Override
     public String mostrarInformacion() {
-        return String.format("Matrícula [%s] - Estado:%s - Nota Final: %.2f",
+        return String.format("Matrícula [%s] - Estado:%s - Model.Nota Final: %.2f",
                 fecha, estado, notaFinal);
     }
 

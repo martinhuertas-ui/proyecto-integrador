@@ -1,3 +1,7 @@
+package Model;
+
+import Interfaces.IMostrable;
+
 public class Persona implements IMostrable {
     private String id;
     private String nombre;
@@ -74,7 +78,7 @@ public class Persona implements IMostrable {
         }
     }
 
-    // Implementación de IMostrable
+    // Implementación de Interfaces.IMostrable
     @Override
     public String mostrarInformacion() {
         return String.format("ID:%s - Nombre:%s - Edad:%d - Correo:%s - Teléfono:%s",

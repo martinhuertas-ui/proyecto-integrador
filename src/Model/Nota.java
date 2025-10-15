@@ -1,3 +1,7 @@
+package Model;
+
+import Interfaces.IMostrable;
+
 public class Nota implements IMostrable {
     private double valor;
     private String descripcion;
@@ -16,7 +20,7 @@ public class Nota implements IMostrable {
         if (valor >= 0.0 && valor <= 5.0) {
             this.valor = valor;
         } else {
-            this.valor = 0.0; // valor por defecto
+            this.valor = 0.0;
         }
     }
 
@@ -32,10 +36,10 @@ public class Nota implements IMostrable {
         }
     }
 
-    // Implementación de IMostrable
+    // Implementación de Interfaces.IMostrable
     @Override
     public String mostrarInformacion() {
-        return String.format("Nota: %.2f (%s)", valor, descripcion);
+        return String.format("Model.Nota: %.2f (%s)", valor, descripcion);
     }
 
     @Override

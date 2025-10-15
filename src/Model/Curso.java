@@ -1,3 +1,11 @@
+package Model;
+
+import Interfaces.IMostrable;
+import Interfaces.IReportable;
+
+import Model.Matricula;
+
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -38,6 +46,10 @@ public class Curso implements IMostrable, IReportable {
             matriculas.add(m);
         }
     }
+    public boolean removerMatricula(Matricula m) {
+        if (m == null) return false;
+        return matriculas.remove(m);
+    }
 
     public List<Matricula> getMatriculas() {
         return new ArrayList<>(matriculas);
@@ -67,12 +79,13 @@ public class Curso implements IMostrable, IReportable {
         if (!hayRiesgo) {
             System.out.println("Todos los estudiantes están en buen estado.");
         }
+
     }
 
     // Implementaciones de interfaces
     @Override
     public String mostrarInformacion() {
-        return String.format("Curso: %s | Profesor: %s | Matrículas: %d",
+        return String.format("Model.Curso: %s | Model.Profesor: %s | Matrículas: %d",
                 nombre,
                 (profesor != null ? profesor.getNombre() : "SIN PROFESOR"),
                 matriculas.size());
@@ -82,7 +95,7 @@ public class Curso implements IMostrable, IReportable {
     public String generarReporte() {
         StringBuilder sb = new StringBuilder();
         sb.append("Reporte del curso: ").append(nombre).append("\n");
-        sb.append("Profesor: ").append(profesor != null ? profesor.getNombre() : "SIN PROFESOR").append("\n");
+        sb.append("Model.Profesor: ").append(profesor != null ? profesor.getNombre() : "SIN PROFESOR").append("\n");
         sb.append("Número de matrículas: ").append(matriculas.size()).append("\n");
         for (Matricula m : matriculas) {
             sb.append(" - ").append(m.mostrarInformacion()).append("\n");
@@ -95,4 +108,6 @@ public class Curso implements IMostrable, IReportable {
         return mostrarInformacion();
     }
 }
+
+
 

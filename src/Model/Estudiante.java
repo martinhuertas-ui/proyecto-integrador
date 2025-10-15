@@ -1,3 +1,7 @@
+package Model;
+
+import Interfaces.IMostrable;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -66,7 +70,7 @@ public class Estudiante extends Persona implements IMostrable {
         estado = (puntaje < 3.0) ? "en riesgo" : "activo";
     }
 
-    // Implementación de IMostrable (polimorfismo)
+    // Implementación de Interfaces.IMostrable (polimorfismo)
     @Override
     public String mostrarInformacion() {
         return String.format("%s - Código:%s - Puntaje:%.2f - Estado:%s",

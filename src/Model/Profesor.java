@@ -1,3 +1,8 @@
+package Model;
+
+import Interfaces.ICalificable;
+import Interfaces.IMostrable;
+
 public class Profesor extends Persona implements IMostrable, ICalificable {
     private String materia;
 
@@ -19,7 +24,7 @@ public class Profesor extends Persona implements IMostrable, ICalificable {
         }
     }
 
-    // Implementación de ICalificable
+    // Implementación de Interfaces.ICalificable
     @Override
     public void asignarNota(Estudiante estudiante, double nota) {
         if (estudiante != null) {
@@ -29,10 +34,10 @@ public class Profesor extends Persona implements IMostrable, ICalificable {
         }
     }
 
-    // Implementación de IMostrable
+    // Implementación de Interfaces.IMostrable
     @Override
     public String mostrarInformacion() {
-        return String.format("Profesor: %s | Materia: %s", super.mostrarInformacion(), materia);
+        return String.format("Model.Profesor: %s | Materia: %s", super.mostrarInformacion(), materia);
     }
 
     @Override
